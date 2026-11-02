@@ -1,0 +1,2904 @@
+{
+ "schemaVersion": 1,
+ "tool": {
+  "name": "shadow-log",
+  "version": "0.1.0"
+ },
+ "generatedAt": "2026-11-02T15:43:23.620Z",
+ "app": {
+  "id": "obsidian",
+  "name": "Obsidian"
+ },
+ "inputs": {
+  "old": {
+   "spec": "obsidian@1.14.5",
+   "app": "obsidian",
+   "version": "1.14.5",
+   "source": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.14.5/obsidian-1.14.5.asar.gz",
+   "date": "2026-10-22",
+   "files": 369
+  },
+  "new": {
+   "spec": "obsidian@1.15.0",
+   "app": "obsidian",
+   "version": "1.15.0",
+   "source": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/obsidian-1.15.0.asar.gz",
+   "date": "2026-11-02",
+   "files": 368
+  }
+ },
+ "summary": {
+  "counts": {
+   "telemetry": {
+    "added": 0,
+    "removed": 6,
+    "changed": 0
+   },
+   "apiPaths": {
+    "added": 0,
+    "removed": 4,
+    "changed": 0
+   },
+   "domains": {
+    "added": 0,
+    "removed": 11,
+    "changed": 0
+   },
+   "ipc": {
+    "added": 1,
+    "removed": 0,
+    "changed": 0
+   },
+   "flags": {
+    "added": 0,
+    "removed": 5,
+    "changed": 0
+   },
+   "configKeys": {
+    "added": 0,
+    "removed": 2,
+    "changed": 0
+   },
+   "commands": {
+    "added": 0,
+    "removed": 3,
+    "changed": 0
+   },
+   "i18n": {
+    "added": 32,
+    "removed": 27,
+    "changed": 4
+   },
+   "deps": {
+    "added": 0,
+    "removed": 0,
+    "changed": 0
+   },
+   "urls": {
+    "added": 3,
+    "removed": 28,
+    "changed": 0
+   },
+   "files": {
+    "added": 9,
+    "removed": 10,
+    "changed": 15
+   }
+  }
+ },
+ "findings": [
+  {
+   "category": "apiPaths",
+   "change": "removed",
+   "value": "/user/forgetpass",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 55516,
+     "snippet": "return bD(\"/user/forgetpass\", {"
+    }
+   ],
+   "score": 35
+  },
+  {
+   "category": "apiPaths",
+   "change": "removed",
+   "value": "/user/pow-challenge",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 57875,
+     "snippet": "return t.trys.push([0, 2, , 3]), [4, bD(\"/user/pow-challenge\", {})];"
+    }
+   ],
+   "score": 35
+  },
+  {
+   "category": "apiPaths",
+   "change": "removed",
+   "value": "/user/resendconfirmation",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 55523,
+     "snippet": "return bD(\"/user/resendconfirmation\", {"
+    }
+   ],
+   "score": 35
+  },
+  {
+   "category": "apiPaths",
+   "change": "removed",
+   "value": "/user/signup",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 55506,
+     "snippet": "return bD(\"/user/signup\", {"
+    }
+   ],
+   "score": 35
+  },
+  {
+   "category": "commands",
+   "change": "removed",
+   "value": "editor:set-heading-",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 79601,
+     "snippet": "id: \"editor:set-heading-\".concat(e),"
+    }
+   ],
+   "score": 25
+  },
+  {
+   "category": "commands",
+   "change": "removed",
+   "value": "editor:toggle-highlight-",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 79646,
+     "snippet": "id: \"editor:toggle-highlight-\".concat(e),"
+    }
+   ],
+   "score": 25
+  },
+  {
+   "category": "commands",
+   "change": "removed",
+   "value": "workspace:goto-tab-",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 113712,
+     "snippet": "id: \"workspace:goto-tab-\".concat(e),"
+    }
+   ],
+   "score": 25
+  },
+  {
+   "category": "configKeys",
+   "change": "removed",
+   "value": "obsidian",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97471,
+     "snippet": "window.localStorage.setItem(\"obsidian\", \"obsidian\"), window.localStorage.removeItem(\"obsidian\")"
+    },
+    {
+     "file": "app.js",
+     "line": 97471,
+     "snippet": "window.localStorage.setItem(\"obsidian\", \"obsidian\"), window.localStorage.removeItem(\"obsidian\")"
+    }
+   ],
+   "score": 21
+  },
+  {
+   "category": "configKeys",
+   "change": "removed",
+   "value": "site-theme",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97608,
+     "snippet": "}, (A = localStorage.getItem(\"site-theme\")) && this.setTheme(A), this.leftSiteThemeToggleEl.createSpan({"
+    },
+    {
+     "file": "app.js",
+     "line": 97607,
+     "snippet": "…l.toggleClass(\"is-dark\", !t), e.toggleClass(\"is-enabled\", !t), localStorage.setItem(\"site-theme\", n), $.graph.renderer && $.graph.renderer.testCSS()"
+    }
+   ],
+   "score": 21
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "chevrotain.io",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1091,
+     "snippet": "See: https://chevrotain.io/docs/guide/resolving_lexer_errors.html#COMPLEMENT for details.`);else{let n=\"\";e&&(n=`"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1093,
+     "snippet": "See: https://chevrotain.io/docs/guide/resolving_lexer_errors.html#REGEXP_PARSING for details.`),Sy(`${PT}"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1101,
+     "snippet": "For details See: https://chevrotain.io/docs/guide/resolving_lexer_errors.html#UNICODE_OPTIMIZE`);else{let w=N1e(T.PATTERN,e.ensureOptimizations);Er(w)&&(v=!1),O…"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "en.wikipedia.org",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3021,
+     "snippet": "…unction generator. Copyright Gaetan Renaudeau. MIT License: http://en.wikipedia.org/wiki/MIT_License *)"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3022,
+     "snippet": "…r. Adapted from Framer.js, copyright Koen Bok. MIT License: http://en.wikipedia.org/wiki/MIT_License *)"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "engelschall.com",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3011,
+     "snippet": "Copyright (c) 2013-2014 Ralf S. Engelschall (http://engelschall.com)"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "jquery.org",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3017,
+     "snippet": "https://jquery.org/license/"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "langium.org",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1233,
+     "snippet": "… detected. Please make \"'+String(e)+'\" lazy. Visit https://langium.org/docs/reference/configuration-services/#resolving-cyclic-dependencies');return t[e]}else i…"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "lodash.com",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3000,
+     "snippet": "* Lodash (Custom Build) <https://lodash.com/>"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3003,
+     "snippet": "* Released under MIT license <https://lodash.com/license>"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "openjsf.org",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3002,
+     "snippet": "* Copyright OpenJS Foundation and other contributors <https://openjsf.org/>"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "tldrlegal.com",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3018,
+     "snippet": "https://tldrlegal.com/license/mit-license"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "underscorejs.org",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3004,
+     "snippet": "* Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>"
+    }
+   ],
+   "score": 8,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "www.google-analytics.com",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97643,
+     "snippet": "…e.now(), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.google-analytics.com/analytics.js\", N(\"create\", B, \"auto\"), N(\"send\", \"pageview\"))"
+    }
+   ],
+   "score": 42,
+   "why": [
+    "keywords: analytics"
+   ]
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "www.googletagmanager.com",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "…fig\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (window.GoogleAnalyticsObject = \"ga\", N = window.…"
+    }
+   ],
+   "score": 31
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/InterVariable-Italic.woff2",
+   "evidence": [
+    {
+     "file": "public/InterVariable-Italic.woff2"
+    }
+   ],
+   "size": 387976,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/InterVariable.woff2",
+   "evidence": [
+    {
+     "file": "public/InterVariable.woff2"
+    }
+   ],
+   "size": 352240,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/SourceCodePro-Bold.ttf",
+   "evidence": [
+    {
+     "file": "public/SourceCodePro-Bold.ttf"
+    }
+   ],
+   "size": 191568,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/SourceCodePro-BoldItalic.ttf",
+   "evidence": [
+    {
+     "file": "public/SourceCodePro-BoldItalic.ttf"
+    }
+   ],
+   "size": 155288,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/SourceCodePro-Italic.ttf",
+   "evidence": [
+    {
+     "file": "public/SourceCodePro-Italic.ttf"
+    }
+   ],
+   "size": 161376,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/SourceCodePro-Regular.ttf",
+   "evidence": [
+    {
+     "file": "public/SourceCodePro-Regular.ttf"
+    }
+   ],
+   "size": 192740,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/external-link-rtl.svg",
+   "evidence": [
+    {
+     "file": "public/external-link-rtl.svg"
+    }
+   ],
+   "size": 278,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/external-link.svg",
+   "evidence": [
+    {
+     "file": "public/external-link.svg"
+    }
+   ],
+   "size": 315,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "added",
+   "value": "public/flow-circular.woff2",
+   "evidence": [
+    {
+     "file": "public/flow-circular.woff2"
+    }
+   ],
+   "size": 7876,
+   "referencedBy": []
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "app.css",
+   "evidence": [
+    {
+     "file": "app.css"
+    }
+   ],
+   "beforeSize": 668223,
+   "afterSize": 598237
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "app.js",
+   "evidence": [
+    {
+     "file": "app.js"
+    }
+   ],
+   "beforeSize": 3942126,
+   "afterSize": 3372270
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "enhance.js",
+   "evidence": [
+    {
+     "file": "enhance.js"
+    }
+   ],
+   "beforeSize": 13229,
+   "afterSize": 12771
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "help.js",
+   "evidence": [
+    {
+     "file": "help.js"
+    }
+   ],
+   "beforeSize": 399153,
+   "afterSize": 389575
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n.js",
+   "evidence": [
+    {
+     "file": "i18n.js"
+    }
+   ],
+   "beforeSize": 132996,
+   "afterSize": 134576
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "index.html",
+   "evidence": [
+    {
+     "file": "index.html"
+    }
+   ],
+   "beforeSize": 1445,
+   "afterSize": 1376
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "lib/codemirror/markdown.js",
+   "evidence": [
+    {
+     "file": "lib/codemirror/markdown.js"
+    }
+   ],
+   "beforeSize": 45052,
+   "afterSize": 45355
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "lib/codemirror/vim.js",
+   "evidence": [
+    {
+     "file": "lib/codemirror/vim.js"
+    }
+   ],
+   "beforeSize": 248977,
+   "afterSize": 255943
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "main.js",
+   "evidence": [
+    {
+     "file": "main.js"
+    }
+   ],
+   "beforeSize": 203702,
+   "afterSize": 212033
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "package.json",
+   "evidence": [
+    {
+     "file": "package.json"
+    }
+   ],
+   "beforeSize": 260,
+   "afterSize": 260
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "quicklook.css",
+   "evidence": [
+    {
+     "file": "quicklook.css"
+    }
+   ],
+   "beforeSize": 117038,
+   "afterSize": 105752
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "quicklook.js",
+   "evidence": [
+    {
+     "file": "quicklook.js"
+    }
+   ],
+   "beforeSize": 679096,
+   "afterSize": 675213
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "sim.js",
+   "evidence": [
+    {
+     "file": "sim.js"
+    }
+   ],
+   "beforeSize": 17693,
+   "afterSize": 17777
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "starter.js",
+   "evidence": [
+    {
+     "file": "starter.js"
+    }
+   ],
+   "beforeSize": 461410,
+   "afterSize": 438925
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "worker.js",
+   "evidence": [
+    {
+     "file": "worker.js"
+    }
+   ],
+   "beforeSize": 239777,
+   "afterSize": 250472
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "lib/mermaid.min.js",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js"
+    }
+   ],
+   "size": 2964042
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/fonts/01dcbad1bac635f9c9cd.woff2",
+   "evidence": [
+    {
+     "file": "public/fonts/01dcbad1bac635f9c9cd.woff2"
+    }
+   ],
+   "size": 387976
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/fonts/05b618077343fbbd92b7.ttf",
+   "evidence": [
+    {
+     "file": "public/fonts/05b618077343fbbd92b7.ttf"
+    }
+   ],
+   "size": 155288
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/fonts/454577c22304619db035.ttf",
+   "evidence": [
+    {
+     "file": "public/fonts/454577c22304619db035.ttf"
+    }
+   ],
+   "size": 161376
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/fonts/4bb6ac751d1c5478ff3a.woff2",
+   "evidence": [
+    {
+     "file": "public/fonts/4bb6ac751d1c5478ff3a.woff2"
+    }
+   ],
+   "size": 7876
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/fonts/52ac8f3034507f1d9e53.ttf",
+   "evidence": [
+    {
+     "file": "public/fonts/52ac8f3034507f1d9e53.ttf"
+    }
+   ],
+   "size": 191568
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/fonts/70cc7ff27245e82ad414.ttf",
+   "evidence": [
+    {
+     "file": "public/fonts/70cc7ff27245e82ad414.ttf"
+    }
+   ],
+   "size": 192740
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/fonts/c504db5c06caaf7cdfba.woff2",
+   "evidence": [
+    {
+     "file": "public/fonts/c504db5c06caaf7cdfba.woff2"
+    }
+   ],
+   "size": 352240
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/images/2308ab1944a6bfa5c5b8.svg",
+   "evidence": [
+    {
+     "file": "public/images/2308ab1944a6bfa5c5b8.svg"
+    }
+   ],
+   "size": 278
+  },
+  {
+   "category": "files",
+   "change": "removed",
+   "value": "public/images/6155340132a851f6089e.svg",
+   "evidence": [
+    {
+     "file": "public/images/6155340132a851f6089e.svg"
+    }
+   ],
+   "size": 315
+  },
+  {
+   "category": "flags",
+   "change": "removed",
+   "value": "Beta",
+   "evidence": [
+    {
+     "file": "worker.js",
+     "line": 6751,
+     "snippet": "…c\":\"û\",\"uuml\":\"ü\",\"yacute\":\"ý\",\"thorn\":\"þ\",\"yuml\":\"ÿ\",\"fnof\":\"ƒ\",\"Alpha\":\"Α\",\"Beta\":\"Β\",\"Gamma\":\"Γ\",\"Delta\":\"Δ\",\"Epsilon\":\"Ε\",\"Zeta\":\"Ζ\",\"Eta\":\"Η\",\"Theta\":\"Θ\",\"…"
+    },
+    {
+     "file": "quicklook.js",
+     "line": 6751,
+     "snippet": "…c\":\"û\",\"uuml\":\"ü\",\"yacute\":\"ý\",\"thorn\":\"þ\",\"yuml\":\"ÿ\",\"fnof\":\"ƒ\",\"Alpha\":\"Α\",\"Beta\":\"Β\",\"Gamma\":\"Γ\",\"Delta\":\"Δ\",\"Epsilon\":\"Ε\",\"Zeta\":\"Ζ\",\"Eta\":\"Η\",\"Theta\":\"Θ\",\"…"
+    },
+    {
+     "file": "app.js",
+     "line": 11531,
+     "snippet": "…c\":\"û\",\"uuml\":\"ü\",\"yacute\":\"ý\",\"thorn\":\"þ\",\"yuml\":\"ÿ\",\"fnof\":\"ƒ\",\"Alpha\":\"Α\",\"Beta\":\"Β\",\"Gamma\":\"Γ\",\"Delta\":\"Δ\",\"Epsilon\":\"Ε\",\"Zeta\":\"Ζ\",\"Eta\":\"Η\",\"Theta\":\"Θ\",\"…"
+    }
+   ],
+   "score": 35,
+   "why": [
+    "keywords: beta"
+   ]
+  },
+  {
+   "category": "flags",
+   "change": "removed",
+   "value": "beta",
+   "evidence": [
+    {
+     "file": "worker.js",
+     "line": 6751,
+     "snippet": "…Tau\":\"Τ\",\"Upsilon\":\"Υ\",\"Phi\":\"Φ\",\"Chi\":\"Χ\",\"Psi\":\"Ψ\",\"Omega\":\"Ω\",\"alpha\":\"α\",\"beta\":\"β\",\"gamma\":\"γ\",\"delta\":\"δ\",\"epsilon\":\"ε\",\"zeta\":\"ζ\",\"eta\":\"η\",\"theta\":\"θ\",\"…"
+    },
+    {
+     "file": "quicklook.js",
+     "line": 6751,
+     "snippet": "…Tau\":\"Τ\",\"Upsilon\":\"Υ\",\"Phi\":\"Φ\",\"Chi\":\"Χ\",\"Psi\":\"Ψ\",\"Omega\":\"Ω\",\"alpha\":\"α\",\"beta\":\"β\",\"gamma\":\"γ\",\"delta\":\"δ\",\"epsilon\":\"ε\",\"zeta\":\"ζ\",\"eta\":\"η\",\"theta\":\"θ\",\"…"
+    },
+    {
+     "file": "app.js",
+     "line": 11531,
+     "snippet": "…Tau\":\"Τ\",\"Upsilon\":\"Υ\",\"Phi\":\"Φ\",\"Chi\":\"Χ\",\"Psi\":\"Ψ\",\"Omega\":\"Ω\",\"alpha\":\"α\",\"beta\":\"β\",\"gamma\":\"γ\",\"delta\":\"δ\",\"epsilon\":\"ε\",\"zeta\":\"ζ\",\"eta\":\"η\",\"theta\":\"θ\",\"…"
+    }
+   ],
+   "score": 35,
+   "why": [
+    "keywords: beta"
+   ]
+  },
+  {
+   "category": "flags",
+   "change": "removed",
+   "value": "feature-cell",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 58294,
+     "snippet": "e.createDiv(\"feature-cell\", (function(e) {"
+    },
+    {
+     "file": "app.js",
+     "line": 58285,
+     "snippet": "cls: \"feature-cell\","
+    },
+    {
+     "file": "app.js",
+     "line": 58254,
+     "snippet": "e.createDiv(\"feature-cell\", (function(e) {"
+    }
+   ],
+   "score": 25
+  },
+  {
+   "category": "flags",
+   "change": "removed",
+   "value": "feature-row",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 58293,
+     "snippet": "e.createDiv(\"feature-row\", (function(e) {"
+    },
+    {
+     "file": "app.js",
+     "line": 58283,
+     "snippet": "e.createDiv(\"feature-row\", (function(e) {"
+    },
+    {
+     "file": "app.js",
+     "line": 58253,
+     "snippet": "e.createDiv(\"feature-row\", (function(e) {"
+    }
+   ],
+   "score": 25
+  },
+  {
+   "category": "flags",
+   "change": "removed",
+   "value": "mobile-onboarding-feature-table",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 58282,
+     "snippet": "return r.formEl.createDiv(\"mobile-onboarding-feature-table\", (function(e) {"
+    },
+    {
+     "file": "app.js",
+     "line": 58251,
+     "snippet": "r.contentEl.createDiv(\"mobile-onboarding-feature-table\", (function(e) {"
+    }
+   ],
+   "score": 25
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "dialogue.msgHeadingNotFound",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "dialogue.msgHeadingNotFound = \"Heading “{{heading}}” not found in file.\""
+    }
+   ],
+   "score": 15,
+   "text": "Heading “{{heading}}” not found in file.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.msgInsertParamRequiresMode",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.msgInsertParamRequiresMode = \"The “{{param}}” URI parameter requires “append” or “prepend.”\""
+    }
+   ],
+   "score": 15,
+   "text": "The “{{param}}” URI parameter requires “append” or “prepend.”",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.buttonDeleteVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonDeleteVault = \"Delete vault\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Delete vault",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.buttonForget",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonForget = \"Forget\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Forget",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.buttonForgetVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonForgetVault = \"Forget vault\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Forget vault",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.buttonMoveToDeviceStorage",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonMoveToDeviceStorage = \"Move to device storage\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Move to device storage",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.buttonOpenVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonOpenVault = \"Open vault\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Open vault",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.buttonOpenVaultRestricted",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonOpenVaultRestricted = \"Open vault in restricted mode\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Open vault in restricted mode",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.buttonRenameVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonRenameVault = \"Rename vault\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Rename vault",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.buttonSetupObsidianSync",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonSetupObsidianSync = \"Set up Obsidian Sync\""
+    }
+   ],
+   "score": 55,
+   "why": [
+    "keywords: sync",
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Set up Obsidian Sync",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelDeleteVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelDeleteVault = \"Delete vault “{{name}}”\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Delete vault “{{name}}”",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelDeleteVaultConfirm",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelDeleteVaultConfirm = \"This action is irreversible. Please confirm you want to delete it.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "This action is irreversible. Please confirm you want to delete it.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelDeleteVaultWarning",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelDeleteVaultWarning = \"Deleting this vault will delete all files in it.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Deleting this vault will delete all files in it.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelForgetVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelForgetVault = \"Forget vault “{{name}}”\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Forget vault “{{name}}”",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelForgetVaultDesc",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelForgetVaultDesc = \"Forgetting this vault will remove it from the list of vaults without deleting any files.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Forgetting this vault will remove it from the list of vaults without deleting any files.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelIcloudDisabled",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelIcloudDisabled = \"You cannot access or create vaults in iCloud because it's disabled for Obsidian.\""
+    }
+   ],
+   "score": 55,
+   "why": [
+    "keywords: cloud",
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "You cannot access or create vaults in iCloud because it's disabled for Obsidian.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelOutdatedWebView",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelOutdatedWebView = \"Update Android WebView\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Update Android WebView",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelOutdatedWebViewDesc",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelOutdatedWebViewDesc = \"Your Android device is not up to date, and must be updated for Obsidian to work. Please find a way to upgrade the app \"Android WebView\".\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Your Android device is not up to date, and must be updated for Obsidian to work. Please find a way to upgrade the app \"Android WebView\".",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelRenameVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelRenameVault = \"Rename vault “{{name}}”\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Rename vault “{{name}}”",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelVaultInAppFolder",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelVaultInAppFolder = \"This vault is located in the Obsidian app folder.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "This vault is located in the Obsidian app folder.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelVaultLocatedAt",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelVaultLocatedAt = \"This vault is located at {{path}}\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "This vault is located at {{path}}",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.msgDeleteFailed",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.msgDeleteFailed = \"Failed to delete vault.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Failed to delete vault.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.msgInvalidVaultNameCharacters",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.msgInvalidVaultNameCharacters = \"Vault name cannot contain any of these characters: \""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Vault name cannot contain any of these characters: ",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.msgMoveOldCopyNotDeleted",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.msgMoveOldCopyNotDeleted = \"The vault was moved, but the old copy in the Obsidian app folder could not be deleted.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "The vault was moved, but the old copy in the Obsidian app folder could not be deleted.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.msgMovingVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.msgMovingVault = \"Moving from {{from}} to {{to}}\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Moving from {{from}} to {{to}}",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.msgNoLocationPermission",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.msgNoLocationPermission = \"Obsidian does not have permission to access this location\""
+    }
+   ],
+   "score": 55,
+   "why": [
+    "keywords: location",
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Obsidian does not have permission to access this location",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "plugins.bases.actionMoveToAllViews",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.bases.actionMoveToAllViews = \"Move to all views\""
+    }
+   ],
+   "score": 15,
+   "text": "Move to all views",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "plugins.bases.actionMoveToThisView",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.bases.actionMoveToThisView = \"Move to this view\""
+    }
+   ],
+   "score": 15,
+   "text": "Move to this view",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "setting.corePlugin.tooltipRequiredByPolicy",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "setting.corePlugin.tooltipRequiredByPolicy = \"Required by your organization's policy.\""
+    }
+   ],
+   "score": 15,
+   "text": "Required by your organization's policy.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "setting.corePlugin.tooltipTurnedOffByPolicy",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "setting.corePlugin.tooltipTurnedOffByPolicy = \"Turned off by your organization's policy.\""
+    }
+   ],
+   "score": 15,
+   "text": "Turned off by your organization's policy.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "setting.thirdPartyPlugin.msgPluginNotPermitted",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "setting.thirdPartyPlugin.msgPluginNotPermitted = \"Plugin “{{name}}” is not permitted by your organization's policy.\""
+    }
+   ],
+   "score": 15,
+   "text": "Plugin “{{name}}” is not permitted by your organization's policy.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "setting.thirdPartyPlugin.tooltipNotPermittedByPolicy",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "setting.thirdPartyPlugin.tooltipNotPermittedByPolicy = \"Not permitted by your organization's policy.\""
+    }
+   ],
+   "score": 15,
+   "text": "Not permitted by your organization's policy.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "changed",
+   "value": "editor.linkSuggestion.labelTypeBlock",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "editor.linkSuggestion.labelTypeBlock = \"^\""
+    }
+   ],
+   "score": 12,
+   "before": "Type ^",
+   "after": "^",
+   "text": "^",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "changed",
+   "value": "editor.linkSuggestion.labelTypeHash",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "editor.linkSuggestion.labelTypeHash = \"#\""
+    }
+   ],
+   "score": 12,
+   "before": "Type #",
+   "after": "#",
+   "text": "#",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "changed",
+   "value": "editor.linkSuggestion.labelTypePipe",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "editor.linkSuggestion.labelTypePipe = \"|\""
+    }
+   ],
+   "score": 12,
+   "before": "Type |",
+   "after": "|",
+   "text": "|",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "changed",
+   "value": "plugins.bases.labelSearchResults",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.bases.labelSearchResults = \"Showing {{shown}} of {{total}}\""
+    }
+   ],
+   "score": 12,
+   "before": "Showing {{count}}",
+   "after": "Showing {{shown}} of {{total}}",
+   "text": "Showing {{shown}} of {{total}}",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "dialogue.buttonAllow",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "dialogue.buttonAllow = \"Allow\""
+    }
+   ],
+   "score": 11,
+   "text": "Allow",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "editor.linkSuggestion.labelAccept",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "editor.linkSuggestion.labelAccept = \"to accept\""
+    }
+   ],
+   "score": 11,
+   "text": "to accept",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.canvas.instructionJumpToGroup",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.canvas.instructionJumpToGroup = \"to navigate to group\""
+    }
+   ],
+   "score": 11,
+   "text": "to navigate to group",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.canvas.instructionNarrowBlock",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.canvas.instructionNarrowBlock = \"to embed block\""
+    }
+   ],
+   "score": 11,
+   "text": "to embed block",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.canvas.instructionNarrowHeading",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.canvas.instructionNarrowHeading = \"to embed heading\""
+    }
+   ],
+   "score": 11,
+   "text": "to embed heading",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.commandPalette.instructionDismiss",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.commandPalette.instructionDismiss = \"to dismiss\""
+    }
+   ],
+   "score": 11,
+   "text": "to dismiss",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.commandPalette.instructionNavigate",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.commandPalette.instructionNavigate = \"to navigate\""
+    }
+   ],
+   "score": 11,
+   "text": "to navigate",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.commandPalette.instructionUse",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.commandPalette.instructionUse = \"to use\""
+    }
+   ],
+   "score": 11,
+   "text": "to use",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.fileExplorer.instructionDismiss",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.fileExplorer.instructionDismiss = \"to dismiss\""
+    }
+   ],
+   "score": 11,
+   "text": "to dismiss",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.fileExplorer.instructionMove",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.fileExplorer.instructionMove = \"to move\""
+    }
+   ],
+   "score": 11,
+   "text": "to move",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.fileExplorer.instructionNavigate",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.fileExplorer.instructionNavigate = \"to navigate\""
+    }
+   ],
+   "score": 11,
+   "text": "to navigate",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.mermaid.labelGuardDesc",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.mermaid.labelGuardDesc = \"Only allow if you trust this vault's contents.\""
+    }
+   ],
+   "score": 11,
+   "text": "Only allow if you trust this vault's contents.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.mermaid.labelGuardTitle",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.mermaid.labelGuardTitle = \"Display Mermaid diagrams in this vault?\""
+    }
+   ],
+   "score": 11,
+   "text": "Display Mermaid diagrams in this vault?",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.noteComposer.instructionAppend",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.noteComposer.instructionAppend = \"to move to bottom\""
+    }
+   ],
+   "score": 11,
+   "text": "to move to bottom",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.noteComposer.instructionDismiss",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.noteComposer.instructionDismiss = \"to dismiss\""
+    }
+   ],
+   "score": 11,
+   "text": "to dismiss",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.noteComposer.instructionMerge",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.noteComposer.instructionMerge = \"to merge\""
+    }
+   ],
+   "score": 11,
+   "text": "to merge",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.noteComposer.instructionNavigate",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.noteComposer.instructionNavigate = \"to navigate\""
+    }
+   ],
+   "score": 11,
+   "text": "to navigate",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.quickSwitcher.instructionDismiss",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.quickSwitcher.instructionDismiss = \"to dismiss\""
+    }
+   ],
+   "score": 11,
+   "text": "to dismiss",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.quickSwitcher.instructionNavigate",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.quickSwitcher.instructionNavigate = \"to navigate\""
+    }
+   ],
+   "score": 11,
+   "text": "to navigate",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.quickSwitcher.instructionOpen",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.quickSwitcher.instructionOpen = \"to open\""
+    }
+   ],
+   "score": 11,
+   "text": "to open",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.quickSwitcher.instructionSelect",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.quickSwitcher.instructionSelect = \"to select\""
+    }
+   ],
+   "score": 11,
+   "text": "to select",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.templates.instructionDismiss",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.templates.instructionDismiss = \"to dismiss\""
+    }
+   ],
+   "score": 11,
+   "text": "to dismiss",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.templates.instructionInsert",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.templates.instructionInsert = \"to insert template\""
+    }
+   ],
+   "score": 11,
+   "text": "to insert template",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "plugins.templates.instructionNavigate",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.templates.instructionNavigate = \"to navigate\""
+    }
+   ],
+   "score": 11,
+   "text": "to navigate",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "properties.valueSuggestion.instructionDismiss",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "properties.valueSuggestion.instructionDismiss = \"to dismiss\""
+    }
+   ],
+   "score": 11,
+   "text": "to dismiss",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "setting.editor.optionMermaidAllow",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "setting.editor.optionMermaidAllow = \"Show Mermaid diagrams in notes\""
+    }
+   ],
+   "score": 11,
+   "text": "Show Mermaid diagrams in notes",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "setting.editor.optionMermaidAllowDescription",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "setting.editor.optionMermaidAllowDescription = \"Render flowcharts, sequence diagrams, and other diagrams from “mermaid” code blocks.\""
+    }
+   ],
+   "score": 11,
+   "text": "Render flowcharts, sequence diagrams, and other diagrams from “mermaid” code blocks.",
+   "referenced": true
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "plugin-script-root",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5548,
+     "snippet": "}), r.ipcMain.on(\"plugin-script-root\", i => {"
+    },
+    {
+     "file": "app.js",
+     "line": 113388,
+     "snippet": "…f (eP === void 0 && S.isDesktopApp && (eP = Vt(\"electron\").ipcRenderer.sendSync(\"plugin-script-root\")), eP && (a = await $De(`${eP}${encodeURIComponent(this.app…"
+    }
+   ],
+   "score": 45
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "event:config",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "}, window.gtag(\"js\", new Date), window.gtag(\"config\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (…"
+    }
+   ],
+   "score": 60
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "event:event",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97765,
+     "snippet": "window.ga && window.ga(\"send\", \"pageview\"), window.gtag && window.gtag(\"event\", \"page_view\")"
+    }
+   ],
+   "score": 60
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "event:js",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "}, window.gtag(\"js\", new Date), window.gtag(\"config\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (…"
+    }
+   ],
+   "score": 60
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "host:www.google-analytics.com",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97643,
+     "snippet": "…e.now(), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.google-analytics.com/analytics.js\", N(\"create\", B, \"auto\"), N(\"send\", \"pageview\"))"
+    }
+   ],
+   "score": 75,
+   "why": [
+    "keywords: analytics"
+   ]
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "host:www.googletagmanager.com",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "…fig\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (window.GoogleAnalyticsObject = \"ga\", N = window.…"
+    }
+   ],
+   "score": 60
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "sdk:gtag",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97765,
+     "snippet": "window.ga && window.ga(\"send\", \"pageview\"), window.gtag && window.gtag(\"event\", \"page_view\")"
+    },
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "}, window.gtag(\"js\", new Date), window.gtag(\"config\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (…"
+    },
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "}, window.gtag(\"js\", new Date), window.gtag(\"config\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (…"
+    }
+   ],
+   "score": 60
+  },
+  {
+   "category": "urls",
+   "change": "added",
+   "value": "https://obsidian.md/changelog/desktop/$",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 108701,
+     "snippet": "let t = `https://obsidian.md/changelog/desktop/${o}.md`;"
+    }
+   ],
+   "score": 20
+  },
+  {
+   "category": "urls",
+   "change": "added",
+   "value": "https://platform.twitter.com/embed/Tweet.html?dnt=true&theme=$",
+   "evidence": [
+    {
+     "file": "quicklook.js",
+     "line": 15165,
+     "snippet": "… \"?start=\" + e[2])), r) : (e = r.match(Dy), e ? `https://platform.twitter.com/embed/Tweet.html?dnt=true&theme=${document.body.hasClass(\"theme-dark\")?\"dark\":\"lig…"
+    },
+    {
+     "file": "app.js",
+     "line": 80816,
+     "snippet": "…\"?start=\" + t[2])), o) : (t = o.match($3e), t ? `https://platform.twitter.com/embed/Tweet.html?dnt=true&theme=${document.body.hasClass(\"theme-dark\")?\"dark\":\"lig…"
+    }
+   ],
+   "score": 20
+  },
+  {
+   "category": "urls",
+   "change": "added",
+   "value": "https://releases.obsidian.md/stats/theme/$",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 56088,
+     "snippet": "url: `https://releases.obsidian.md/stats/theme/${encodeURIComponent(r)}/download`"
+    }
+   ],
+   "score": 20
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "http://en.wikipedia.org/wiki/MIT_License",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3021,
+     "snippet": "…unction generator. Copyright Gaetan Renaudeau. MIT License: http://en.wikipedia.org/wiki/MIT_License *)"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3022,
+     "snippet": "…r. Adapted from Framer.js, copyright Koen Bok. MIT License: http://en.wikipedia.org/wiki/MIT_License *)"
+    }
+   ],
+   "score": 6,
+   "why": [
+    "keywords: license",
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "http://engelschall.com",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3011,
+     "snippet": "Copyright (c) 2013-2014 Ralf S. Engelschall (http://engelschall.com)"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "http://underscorejs.org/LICENSE",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3004,
+     "snippet": "* Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>"
+    }
+   ],
+   "score": 6,
+   "why": [
+    "keywords: license",
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://chevrotain.io/docs/FAQ.html",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1141,
+     "snippet": "For further details see: https://chevrotain.io/docs/FAQ.html#NUMERICAL_SUFFIXES"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://chevrotain.io/docs/changes/BREAKING_CHANGES.html",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1168,
+     "snippet": "See: https://chevrotain.io/docs/changes/BREAKING_CHANGES.html#_6-0-0"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1172,
+     "snippet": "See: https://chevrotain.io/docs/changes/BREAKING_CHANGES.html#_4-0-0"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://chevrotain.io/docs/guide/internals.html",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1176,
+     "snippet": "See: https://chevrotain.io/docs/guide/internals.html#grammar-recording for details`,-1,-1,-1,-1,-1,-1);Object.freeze(jye);Krt={name:`This CSTNode indicates the …"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1177,
+     "snippet": "See: https://chevrotain.io/docs/guide/internals.html#grammar-recording for details`,children:{}},O6=class{static{o(this,\"GastRecorder\")}initGastRecorder(e){this…"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1179,
+     "snippet": "https://chevrotain.io/docs/guide/internals.html#grammar-recording`}catch{throw n}throw n}}optionInternalRecord(e,r){return KT.call(this,Cn,e,r)}atLeastOneIntern…"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://chevrotain.io/docs/guide/resolving_grammar_errors.html",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1150,
+     "snippet": "See: https://chevrotain.io/docs/guide/resolving_grammar_errors.html#COMMON_PREFIX"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1153,
+     "snippet": "`;return n=n+`See: https://chevrotain.io/docs/guide/resolving_grammar_errors.html#AMBIGUOUS_ALTERNATIVES"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1186,
+     "snippet": "See: https://chevrotain.io/docs/guide/resolving_grammar_errors.html#IGNORING_AMBIGUITIES"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://chevrotain.io/docs/guide/resolving_lexer_errors.html",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1091,
+     "snippet": "See: https://chevrotain.io/docs/guide/resolving_lexer_errors.html#COMPLEMENT for details.`);else{let n=\"\";e&&(n=`"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1093,
+     "snippet": "See: https://chevrotain.io/docs/guide/resolving_lexer_errors.html#REGEXP_PARSING for details.`),Sy(`${PT}"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1101,
+     "snippet": "For details See: https://chevrotain.io/docs/guide/resolving_lexer_errors.html#UNICODE_OPTIMIZE`);else{let w=N1e(T.PATTERN,e.ensureOptimizations);Er(w)&&(v=!1),O…"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://github.com/chevrotain/chevrotain/issues",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1096,
+     "snippet": "Please open an issue at: https://github.com/chevrotain/chevrotain/issues`+n)}}return[]}function OF(t,e,r){switch(t.type){case\"Disjunction\":for(let i=0;i<t.value…"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://github.com/chevrotain/chevrotain/issues/564",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1133,
+     "snippet": "See: https://github.com/chevrotain/chevrotain/issues/564#issuecomment-349062346 for details.`;return Gt(t,K1e)&&(r.CATEGORIES=t[K1e]),jh([r]),Gt(t,Q1e)&&(r.LABE…"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://github.com/jquery/jquery/blob/master/src/event.js",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3019,
+     "snippet": "https://github.com/jquery/jquery/blob/master/src/event.js"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://github.com/markedjs/marked",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 447,
+     "snippet": "Please report this to https://github.com/markedjs/marked.`,t){let n=\"<p>An error occurred:</p><pre>\"+du(r.message+\"\",!0)+\"</pre>\";return e?Promise.resolve(n):n}…"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://github.com/mermaid-js/mermaid/issues",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 2619,
+     "snippet": "…due to a bug within Mermaid, please report this issue at https://github.com/mermaid-js/mermaid/issues.\");K.debug(e),xft(e,r)},\"parse\")}});var Tft,wft,KEe,QEe=O(…"
+    },
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 2952,
+     "snippet": "…due to a bug within Mermaid, please report this issue at https://github.com/mermaid-js/mermaid/issues.\");M0t(r,n)}catch(e){throw K.error(\"Error parsing treemap:…"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://github.com/nodeca/js-yaml",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 2995,
+     "snippet": "(*! js-yaml 4.1.1 https://github.com/nodeca/js-yaml @license MIT *)"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://github.com/uuidjs/uuid",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 2460,
+     "snippet": "…ues)throw new Error(\"crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported\");qU=crypto.getRandomValues.bind(c…"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://jquery.org/license/",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3017,
+     "snippet": "https://jquery.org/license/"
+    }
+   ],
+   "score": 6,
+   "why": [
+    "keywords: license",
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://langium.org/docs/reference/configuration-services/",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1233,
+     "snippet": "… detected. Please make \"'+String(e)+'\" lazy. Visit https://langium.org/docs/reference/configuration-services/#resolving-cyclic-dependencies');return t[e]}else i…"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://lodash.com/",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3000,
+     "snippet": "* Lodash (Custom Build) <https://lodash.com/>"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://lodash.com/license",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3003,
+     "snippet": "* Released under MIT license <https://lodash.com/license>"
+    }
+   ],
+   "score": 6,
+   "why": [
+    "keywords: license",
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://obsidian.md/",
+   "evidence": [
+    {
+     "file": "help.js",
+     "line": 333,
+     "snippet": "M = \"en\" === t ? \"https://obsidian.md/help\" : \"https://obsidian.md/\".concat(t, \"/help\"),"
+    },
+    {
+     "file": "app.js",
+     "line": 35046,
+     "snippet": "i = \"en\" === n ? \"https://obsidian.md/help\" : \"https://obsidian.md/\".concat(n, \"/help\"),"
+    },
+    {
+     "file": "app.js",
+     "line": 34902,
+     "snippet": "i = \"en\" === n ? \"https://obsidian.md\" : \"https://obsidian.md/\".concat(n),"
+    }
+   ],
+   "score": 14
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://obsidian.md/changelog/desktop/",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 110569,
+     "snippet": "t = \"https://obsidian.md/changelog/desktop/\".concat(e, \".md\"), i.label = 1;"
+    }
+   ],
+   "score": 14
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://openjsf.org/",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3002,
+     "snippet": "* Copyright OpenJS Foundation and other contributors <https://openjsf.org/>"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://platform.twitter.com/embed/Tweet.html?dnt=true&theme=",
+   "evidence": [
+    {
+     "file": "quicklook.js",
+     "line": 27953,
+     "snippet": "return \"https://platform.twitter.com/embed/Tweet.html?dnt=true&theme=\".concat(a ? \"dark\" : \"light\", \"&id=\").concat(t[1])"
+    },
+    {
+     "file": "app.js",
+     "line": 81203,
+     "snippet": "return \"https://platform.twitter.com/embed/Tweet.html?dnt=true&theme=\".concat(n ? \"dark\" : \"light\", \"&id=\").concat(t[1])"
+    }
+   ],
+   "score": 14
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://releases.obsidian.md/stats/theme/",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 55172,
+     "snippet": "url: \"https://releases.obsidian.md/stats/theme/\".concat(encodeURIComponent(n), \"/download\")"
+    }
+   ],
+   "score": 14
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://tldrlegal.com/license/mit-license",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 3018,
+     "snippet": "https://tldrlegal.com/license/mit-license"
+    }
+   ],
+   "score": 6,
+   "why": [
+    "keywords: license",
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://unpkg.com/mermaid@11.13.0/dist/mermaid.min.js",
+   "evidence": [
+    {
+     "file": "lib/mermaid.min.js",
+     "line": 1,
+     "snippet": "// Source: https://unpkg.com/mermaid@11.13.0/dist/mermaid.min.js"
+    }
+   ],
+   "score": 4,
+   "why": [
+    "only in bundled third-party code"
+   ],
+   "vendorOnly": true
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://www.google-analytics.com/analytics.js",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97643,
+     "snippet": "…e.now(), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.google-analytics.com/analytics.js\", N(\"create\", B, \"auto\"), N(\"send\", \"pageview\"))"
+    }
+   ],
+   "score": 25,
+   "why": [
+    "keywords: analytics"
+   ]
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://www.googletagmanager.com/gtag/js?id=",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "…fig\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (window.GoogleAnalyticsObject = \"ga\", N = window.…"
+    }
+   ],
+   "score": 14
+  }
+ ],
+ "notable": [
+  {
+   "category": "i18n-cluster",
+   "change": "added",
+   "value": "interface.startScreen.mobile",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonSetupObsidianSync = \"Set up Obsidian Sync\""
+    }
+   ],
+   "title": "New UI string group interface.startScreen.mobile (24 strings)",
+   "score": 98,
+   "why": [
+    "24 new UI strings under one prefix",
+    "24 not referenced by code yet",
+    "keywords: sync, cloud, location"
+   ],
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"Set up Obsidian Sync\", \"up Obsidian Sync\", \"Obsidian does not have permission to access this location\", \"Delete vault\")",
+   "strings": [
+    {
+     "key": "interface.startScreen.mobile.buttonSetupObsidianSync",
+     "text": "Set up Obsidian Sync",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelIcloudDisabled",
+     "text": "You cannot access or create vaults in iCloud because it's disabled for Obsidian.",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.msgNoLocationPermission",
+     "text": "Obsidian does not have permission to access this location",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonDeleteVault",
+     "text": "Delete vault",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonForget",
+     "text": "Forget",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonForgetVault",
+     "text": "Forget vault",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonMoveToDeviceStorage",
+     "text": "Move to device storage",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonOpenVault",
+     "text": "Open vault",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonOpenVaultRestricted",
+     "text": "Open vault in restricted mode",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonRenameVault",
+     "text": "Rename vault",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelDeleteVault",
+     "text": "Delete vault “{{name}}”",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelDeleteVaultConfirm",
+     "text": "This action is irreversible. Please confirm you want to delete it.",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelDeleteVaultWarning",
+     "text": "Deleting this vault will delete all files in it.",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelForgetVault",
+     "text": "Forget vault “{{name}}”",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelForgetVaultDesc",
+     "text": "Forgetting this vault will remove it from the list of vaults without deleting any files.",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelOutdatedWebView",
+     "text": "Update Android WebView",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelOutdatedWebViewDesc",
+     "text": "Your Android device is not up to date, and must be updated for Obsidian to work. Please find a way to upgrade the app \"Android WebView\".",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelRenameVault",
+     "text": "Rename vault “{{name}}”",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelVaultInAppFolder",
+     "text": "This vault is located in the Obsidian app folder.",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelVaultLocatedAt",
+     "text": "This vault is located at {{path}}",
+     "referenced": false
+    }
+   ]
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "host:www.google-analytics.com",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97643,
+     "snippet": "…e.now(), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.google-analytics.com/analytics.js\", N(\"create\", B, \"auto\"), N(\"send\", \"pageview\"))"
+    }
+   ],
+   "title": "Removed telemetry/analytics signal host:www.google-analytics.com",
+   "score": 75,
+   "why": [
+    "keywords: analytics"
+   ],
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"host:www.google-analytics.com\")"
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "event:config",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "}, window.gtag(\"js\", new Date), window.gtag(\"config\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (…"
+    }
+   ],
+   "title": "Removed telemetry/analytics signal event:config",
+   "score": 60,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"event:config\")"
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "event:event",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97765,
+     "snippet": "window.ga && window.ga(\"send\", \"pageview\"), window.gtag && window.gtag(\"event\", \"page_view\")"
+    }
+   ],
+   "title": "Removed telemetry/analytics signal event:event",
+   "score": 60,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"event:event\")"
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "event:js",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "}, window.gtag(\"js\", new Date), window.gtag(\"config\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (…"
+    }
+   ],
+   "title": "Removed telemetry/analytics signal event:js",
+   "score": 60,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"event:js\")"
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "host:www.googletagmanager.com",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "…fig\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (window.GoogleAnalyticsObject = \"ga\", N = window.…"
+    }
+   ],
+   "title": "Removed telemetry/analytics signal host:www.googletagmanager.com",
+   "score": 60,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"host:www.googletagmanager.com\")"
+  },
+  {
+   "category": "telemetry",
+   "change": "removed",
+   "value": "sdk:gtag",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97765,
+     "snippet": "window.ga && window.ga(\"send\", \"pageview\"), window.gtag && window.gtag(\"event\", \"page_view\")"
+    },
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "}, window.gtag(\"js\", new Date), window.gtag(\"config\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (…"
+    },
+    {
+     "file": "app.js",
+     "line": 97641,
+     "snippet": "}, window.gtag(\"js\", new Date), window.gtag(\"config\", B), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.googletagmanager.com/gtag/js?id=\" + B) : (…"
+    }
+   ],
+   "title": "Removed telemetry/analytics signal sdk:gtag",
+   "score": 60,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"sdk:gtag\")"
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "plugin-script-root",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5548,
+     "snippet": "}), r.ipcMain.on(\"plugin-script-root\", i => {"
+    },
+    {
+     "file": "app.js",
+     "line": 113388,
+     "snippet": "…f (eP === void 0 && S.isDesktopApp && (eP = Vt(\"electron\").ipcRenderer.sendSync(\"plugin-script-root\")), eP && (a = await $De(`${eP}${encodeURIComponent(this.app…"
+    }
+   ],
+   "title": "New IPC channel plugin-script-root (renderer, sendSync)",
+   "score": 45,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"plugin script root\")"
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "www.google-analytics.com",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 97643,
+     "snippet": "…e.now(), (Q = O.createEl(\"script\")).async = !0, Q.src = \"https://www.google-analytics.com/analytics.js\", N(\"create\", B, \"auto\"), N(\"send\", \"pageview\"))"
+    }
+   ],
+   "title": "Removed domain referenced: www.google-analytics.com",
+   "score": 42,
+   "why": [
+    "keywords: analytics"
+   ],
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"www.google-analytics.com\")"
+  },
+  {
+   "category": "apiPaths",
+   "change": "removed",
+   "value": "/user/forgetpass",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 55516,
+     "snippet": "return bD(\"/user/forgetpass\", {"
+    }
+   ],
+   "title": "Removed API path /user/forgetpass",
+   "score": 35,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.14.5→1.15.0 (searched for: \"/user/forgetpass\")"
+  }
+ ],
+ "reportFile": "obsidian-1.14.5-to-1.15.0.md",
+ "notes": [
+  {
+   "version": "1.15.0",
+   "url": "https://obsidian.md/changelog/2026-10-22-desktop-v1.15.0/"
+  },
+  {
+   "version": "1.14.5",
+   "url": "https://obsidian.md/changelog/2026-10-22-desktop-v1.14.5/"
+  },
+  {
+   "version": "1.14.4",
+   "url": "https://obsidian.md/changelog/2026-10-05-desktop-v1.14.4/"
+  },
+  {
+   "version": "1.14.4",
+   "url": "https://obsidian.md/changelog/2026-10-01-desktop-v1.14.4/"
+  },
+  {
+   "version": "1.14.3",
+   "url": "https://obsidian.md/changelog/2026-09-29-desktop-v1.14.3/"
+  },
+  {
+   "version": "1.14.2",
+   "url": "https://obsidian.md/changelog/2026-09-15-desktop-v1.14.2/"
+  },
+  {
+   "version": "1.14.1",
+   "url": "https://obsidian.md/changelog/2026-09-08-desktop-v1.14.1/"
+  },
+  {
+   "version": "1.14.0",
+   "url": "https://obsidian.md/changelog/2026-09-02-desktop-v1.14.0/"
+  },
+  {
+   "version": "1.13.7",
+   "url": "https://obsidian.md/changelog/2026-08-12-desktop-v1.13.7/"
+  },
+  {
+   "version": "1.13.7",
+   "url": "https://obsidian.md/changelog/2026-08-11-desktop-v1.13.7/"
+  }
+ ]
+}

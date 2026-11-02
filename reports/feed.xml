@@ -3,6 +3,22 @@
 <title>Shadow Log</title><link>https://github.com/Non-Zero-AI/shadow-log/blob/main/reports</link>
 <description>What app updates really changed: hidden features, flags, endpoints, telemetry. With evidence.</description>
 <item>
+<title>Obsidian 1.14.5 → 1.15.0: New UI string group interface.startScreen.mobile (24 strings); Removed telemetry/analytics signal host:www.google-analytics.com; Removed telemetry/analytics signal event:config</title>
+<link>https://github.com/Non-Zero-AI/shadow-log/blob/main/reports/obsidian-1.14.5-to-1.15.0.md</link>
+<guid isPermaLink="false">obsidian-1.14.5-1.15.0</guid>
+<pubDate>Mon, 02 Nov 2026 15:43:23 GMT</pubDate>
+<description>• New UI string group interface.startScreen.mobile (24 strings)
+• Removed telemetry/analytics signal host:www.google-analytics.com
+• Removed telemetry/analytics signal event:config
+• Removed telemetry/analytics signal event:event
+• Removed telemetry/analytics signal event:js
+• Removed telemetry/analytics signal host:www.googletagmanager.com
+• Removed telemetry/analytics signal sdk:gtag
+• New IPC channel plugin-script-root (renderer, sendSync)
+• Removed domain referenced: www.google-analytics.com
+• Removed API path /user/forgetpass</description>
+</item>
+<item>
 <title>Obsidian 1.14.4 → 1.14.5: New bundled library file lib/pele.min.js (683.3 KB), not referenced by app code</title>
 <link>https://github.com/Non-Zero-AI/shadow-log/blob/main/reports/obsidian-1.14.4-to-1.14.5.md</link>
 <guid isPermaLink="false">obsidian-1.14.4-1.14.5</guid>
