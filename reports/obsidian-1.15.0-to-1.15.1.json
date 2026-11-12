@@ -1,0 +1,2066 @@
+{
+ "schemaVersion": 1,
+ "tool": {
+  "name": "shadow-log",
+  "version": "0.1.0"
+ },
+ "generatedAt": "2026-11-12T23:35:30.889Z",
+ "app": {
+  "id": "obsidian",
+  "name": "Obsidian"
+ },
+ "inputs": {
+  "old": {
+   "spec": "obsidian@1.15.0",
+   "app": "obsidian",
+   "version": "1.15.0",
+   "source": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.0/obsidian-1.15.0.asar.gz",
+   "date": "2026-11-02",
+   "files": 368
+  },
+  "new": {
+   "spec": "obsidian@1.15.1",
+   "app": "obsidian",
+   "version": "1.15.1",
+   "source": "https://github.com/obsidianmd/obsidian-releases/releases/download/v1.15.1/obsidian-1.15.1.asar.gz",
+   "date": "2026-11-12",
+   "files": 368
+  }
+ },
+ "summary": {
+  "counts": {
+   "telemetry": {
+    "added": 0,
+    "removed": 0,
+    "changed": 0
+   },
+   "apiPaths": {
+    "added": 0,
+    "removed": 0,
+    "changed": 0
+   },
+   "domains": {
+    "added": 0,
+    "removed": 1,
+    "changed": 0
+   },
+   "ipc": {
+    "added": 6,
+    "removed": 0,
+    "changed": 0
+   },
+   "flags": {
+    "added": 0,
+    "removed": 0,
+    "changed": 0
+   },
+   "configKeys": {
+    "added": 2,
+    "removed": 3,
+    "changed": 0
+   },
+   "commands": {
+    "added": 0,
+    "removed": 0,
+    "changed": 0
+   },
+   "i18n": {
+    "added": 25,
+    "removed": 9,
+    "changed": 0
+   },
+   "deps": {
+    "added": 0,
+    "removed": 1,
+    "changed": 1
+   },
+   "urls": {
+    "added": 0,
+    "removed": 1,
+    "changed": 0
+   },
+   "files": {
+    "added": 0,
+    "removed": 0,
+    "changed": 69
+   }
+  }
+ },
+ "findings": [
+  {
+   "category": "configKeys",
+   "change": "added",
+   "value": "disable-background-timer-throttling",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 4633,
+     "snippet": "…tch(\"enable-features\", A.join(\",\")), r.app.commandLine.appendSwitch(\"disable-background-timer-throttling\"), process.removeAllListeners(\"uncaughtException\"), pro…"
+    }
+   ],
+   "score": 30
+  },
+  {
+   "category": "configKeys",
+   "change": "added",
+   "value": "language",
+   "evidence": [
+    {
+     "file": "index.html",
+     "line": 148,
+     "snippet": "…', localStorage.getItem(startup.id + '-config') || '.obsidian', localStorage.getItem('language') || navigator.language).then(showSnapshot, function (e) {"
+    }
+   ],
+   "score": 30
+  },
+  {
+   "category": "configKeys",
+   "change": "removed",
+   "value": "enable-plugin-",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 113524,
+     "snippet": "if (localStorage.setItem(\"enable-plugin-\" + this.app.appId, e ? \"true\" : \"false\"), e)"
+    },
+    {
+     "file": "app.js",
+     "line": 113521,
+     "snippet": "return localStorage.getItem(\"enable-plugin-\" + this.app.appId) === \"true\""
+    },
+    {
+     "file": "app.js",
+     "line": 113420,
+     "snippet": "localStorage.getItem(\"enable-plugin-\" + this.app.appId) === null && (await e.customCss.globallyDisable(), new Cz(e).open());"
+    }
+   ],
+   "score": 21
+  },
+  {
+   "category": "configKeys",
+   "change": "removed",
+   "value": "slidingSidebar",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 63901,
+     "snippet": "}), S.isPhone && this.app.vault.getConfig(\"slidingSidebar\") ? (ae(r, new oe({"
+    },
+    {
+     "file": "app.js",
+     "line": 63865,
+     "snippet": "…lateX(${s}px)`, \"translateX(0)\", \"\")), S.isPhone && this.app.vault.getConfig(\"slidingSidebar\") && (ae(r, new oe({"
+    },
+    {
+     "file": "app.js",
+     "line": 63680,
+     "snippet": "E = S.isPhone && this.app.vault.getConfig(\"slidingSidebar\");"
+    }
+   ],
+   "score": 21
+  },
+  {
+   "category": "configKeys",
+   "change": "removed",
+   "value": "uriCallbacks",
+   "evidence": [
+    {
+     "file": "app.js",
+     "line": 110796,
+     "snippet": "if (!e.vault.getConfig(\"uriCallbacks\")) return;"
+    },
+    {
+     "file": "app.js",
+     "line": 110633,
+     "snippet": "if (!this.app.vault.getConfig(\"uriCallbacks\")) return !1;"
+    }
+   ],
+   "score": 21
+  },
+  {
+   "category": "deps",
+   "change": "changed",
+   "value": "bundled:lib/pele.min.js (Pele)",
+   "evidence": [
+    {
+     "file": "lib/pele.min.js",
+     "snippet": "bundled:lib/pele.min.js (Pele) 1.13.0"
+    }
+   ],
+   "score": 24,
+   "before": "1.8.0",
+   "after": "1.13.0",
+   "version": "1.13.0"
+  },
+  {
+   "category": "deps",
+   "change": "removed",
+   "value": "bundled:lib/reveal/reveal.js (reveal.js)",
+   "evidence": [
+    {
+     "file": "lib/reveal/reveal.js",
+     "snippet": "bundled:lib/reveal/reveal.js (reveal.js) 4.3.1"
+    }
+   ],
+   "score": 21,
+   "version": "4.3.1"
+  },
+  {
+   "category": "domains",
+   "change": "removed",
+   "value": "git.io",
+   "evidence": [
+    {
+     "file": "worker.js",
+     "line": 2644,
+     "snippet": "…ail(new Error(\"Incorrectly eaten value: please report this warning on https://git.io/vg5Ft\"), k())"
+    },
+    {
+     "file": "quicklook.js",
+     "line": 2644,
+     "snippet": "…ail(new Error(\"Incorrectly eaten value: please report this warning on https://git.io/vg5Ft\"), b())"
+    },
+    {
+     "file": "app.js",
+     "line": 2650,
+     "snippet": "…ail(new Error(\"Incorrectly eaten value: please report this warning on https://git.io/vg5Ft\"), w())"
+    }
+   ],
+   "score": 31
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "app.css",
+   "evidence": [
+    {
+     "file": "app.css"
+    }
+   ],
+   "beforeSize": 598237,
+   "afterSize": 600178
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "app.js",
+   "evidence": [
+    {
+     "file": "app.js"
+    }
+   ],
+   "beforeSize": 3372270,
+   "afterSize": 3365654
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "enhance.js",
+   "evidence": [
+    {
+     "file": "enhance.js"
+    }
+   ],
+   "beforeSize": 12771,
+   "afterSize": 12681
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "help.js",
+   "evidence": [
+    {
+     "file": "help.js"
+    }
+   ],
+   "beforeSize": 389575,
+   "afterSize": 401432
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n.js",
+   "evidence": [
+    {
+     "file": "i18n.js"
+    }
+   ],
+   "beforeSize": 134576,
+   "afterSize": 135998
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/am.txt",
+   "evidence": [
+    {
+     "file": "i18n/am.txt"
+    }
+   ],
+   "beforeSize": 127562,
+   "afterSize": 130831
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ar.txt",
+   "evidence": [
+    {
+     "file": "i18n/ar.txt"
+    }
+   ],
+   "beforeSize": 118825,
+   "afterSize": 121621
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/be.txt",
+   "evidence": [
+    {
+     "file": "i18n/be.txt"
+    }
+   ],
+   "beforeSize": 145128,
+   "afterSize": 148822
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/bg.txt",
+   "evidence": [
+    {
+     "file": "i18n/bg.txt"
+    }
+   ],
+   "beforeSize": 156569,
+   "afterSize": 160750
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/bn.txt",
+   "evidence": [
+    {
+     "file": "i18n/bn.txt"
+    }
+   ],
+   "beforeSize": 192482,
+   "afterSize": 197132
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ca.txt",
+   "evidence": [
+    {
+     "file": "i18n/ca.txt"
+    }
+   ],
+   "beforeSize": 89893,
+   "afterSize": 92360
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/cs.txt",
+   "evidence": [
+    {
+     "file": "i18n/cs.txt"
+    }
+   ],
+   "beforeSize": 86806,
+   "afterSize": 89060
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/da.txt",
+   "evidence": [
+    {
+     "file": "i18n/da.txt"
+    }
+   ],
+   "beforeSize": 76562,
+   "afterSize": 78560
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/de.txt",
+   "evidence": [
+    {
+     "file": "i18n/de.txt"
+    }
+   ],
+   "beforeSize": 90333,
+   "afterSize": 93026
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/el.txt",
+   "evidence": [
+    {
+     "file": "i18n/el.txt"
+    }
+   ],
+   "beforeSize": 159867,
+   "afterSize": 164819
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/en-GB.txt",
+   "evidence": [
+    {
+     "file": "i18n/en-GB.txt"
+    }
+   ],
+   "beforeSize": 7594,
+   "afterSize": 7615
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/es.txt",
+   "evidence": [
+    {
+     "file": "i18n/es.txt"
+    }
+   ],
+   "beforeSize": 88438,
+   "afterSize": 90690
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/fa.txt",
+   "evidence": [
+    {
+     "file": "i18n/fa.txt"
+    }
+   ],
+   "beforeSize": 132294,
+   "afterSize": 135621
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/fi.txt",
+   "evidence": [
+    {
+     "file": "i18n/fi.txt"
+    }
+   ],
+   "beforeSize": 82312,
+   "afterSize": 84650
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/fr.txt",
+   "evidence": [
+    {
+     "file": "i18n/fr.txt"
+    }
+   ],
+   "beforeSize": 95033,
+   "afterSize": 97528
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ga.txt",
+   "evidence": [
+    {
+     "file": "i18n/ga.txt"
+    }
+   ],
+   "beforeSize": 89729,
+   "afterSize": 91999
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/gl.txt",
+   "evidence": [
+    {
+     "file": "i18n/gl.txt"
+    }
+   ],
+   "beforeSize": 87163,
+   "afterSize": 89369
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/he.txt",
+   "evidence": [
+    {
+     "file": "i18n/he.txt"
+    }
+   ],
+   "beforeSize": 105053,
+   "afterSize": 107911
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/hu.txt",
+   "evidence": [
+    {
+     "file": "i18n/hu.txt"
+    }
+   ],
+   "beforeSize": 96297,
+   "afterSize": 98692
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/id.txt",
+   "evidence": [
+    {
+     "file": "i18n/id.txt"
+    }
+   ],
+   "beforeSize": 78667,
+   "afterSize": 80785
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/it.txt",
+   "evidence": [
+    {
+     "file": "i18n/it.txt"
+    }
+   ],
+   "beforeSize": 84903,
+   "afterSize": 87281
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ja.txt",
+   "evidence": [
+    {
+     "file": "i18n/ja.txt"
+    }
+   ],
+   "beforeSize": 113042,
+   "afterSize": 116002
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ka.txt",
+   "evidence": [
+    {
+     "file": "i18n/ka.txt"
+    }
+   ],
+   "beforeSize": 205986,
+   "afterSize": 210909
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/kab.txt",
+   "evidence": [
+    {
+     "file": "i18n/kab.txt"
+    }
+   ],
+   "beforeSize": 84835,
+   "afterSize": 87213
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/km.txt",
+   "evidence": [
+    {
+     "file": "i18n/km.txt"
+    }
+   ],
+   "beforeSize": 204384,
+   "afterSize": 209326
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ko.txt",
+   "evidence": [
+    {
+     "file": "i18n/ko.txt"
+    }
+   ],
+   "beforeSize": 96091,
+   "afterSize": 98619
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/lv.txt",
+   "evidence": [
+    {
+     "file": "i18n/lv.txt"
+    }
+   ],
+   "beforeSize": 86529,
+   "afterSize": 88897
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/mapping.txt",
+   "evidence": [
+    {
+     "file": "i18n/mapping.txt"
+    }
+   ],
+   "beforeSize": 98599,
+   "afterSize": 99822
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ms.txt",
+   "evidence": [
+    {
+     "file": "i18n/ms.txt"
+    }
+   ],
+   "beforeSize": 80335,
+   "afterSize": 82512
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ne.txt",
+   "evidence": [
+    {
+     "file": "i18n/ne.txt"
+    }
+   ],
+   "beforeSize": 209244,
+   "afterSize": 214304
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/nl.txt",
+   "evidence": [
+    {
+     "file": "i18n/nl.txt"
+    }
+   ],
+   "beforeSize": 83697,
+   "afterSize": 86046
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/no.txt",
+   "evidence": [
+    {
+     "file": "i18n/no.txt"
+    }
+   ],
+   "beforeSize": 76481,
+   "afterSize": 78567
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/pl.txt",
+   "evidence": [
+    {
+     "file": "i18n/pl.txt"
+    }
+   ],
+   "beforeSize": 85920,
+   "afterSize": 88207
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/pt-BR.txt",
+   "evidence": [
+    {
+     "file": "i18n/pt-BR.txt"
+    }
+   ],
+   "beforeSize": 85577,
+   "afterSize": 87761
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/pt.txt",
+   "evidence": [
+    {
+     "file": "i18n/pt.txt"
+    }
+   ],
+   "beforeSize": 86037,
+   "afterSize": 88281
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ro.txt",
+   "evidence": [
+    {
+     "file": "i18n/ro.txt"
+    }
+   ],
+   "beforeSize": 93059,
+   "afterSize": 95328
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ru.txt",
+   "evidence": [
+    {
+     "file": "i18n/ru.txt"
+    }
+   ],
+   "beforeSize": 150240,
+   "afterSize": 153962
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/sa.txt",
+   "evidence": [
+    {
+     "file": "i18n/sa.txt"
+    }
+   ],
+   "beforeSize": 215692,
+   "afterSize": 221035
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/si.txt",
+   "evidence": [
+    {
+     "file": "i18n/si.txt"
+    }
+   ],
+   "beforeSize": 200310,
+   "afterSize": 204851
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/sk.txt",
+   "evidence": [
+    {
+     "file": "i18n/sk.txt"
+    }
+   ],
+   "beforeSize": 89189,
+   "afterSize": 91639
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/sq.txt",
+   "evidence": [
+    {
+     "file": "i18n/sq.txt"
+    }
+   ],
+   "beforeSize": 91808,
+   "afterSize": 94051
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/sr.txt",
+   "evidence": [
+    {
+     "file": "i18n/sr.txt"
+    }
+   ],
+   "beforeSize": 140592,
+   "afterSize": 144022
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/sv.txt",
+   "evidence": [
+    {
+     "file": "i18n/sv.txt"
+    }
+   ],
+   "beforeSize": 80158,
+   "afterSize": 82179
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/ta.txt",
+   "evidence": [
+    {
+     "file": "i18n/ta.txt"
+    }
+   ],
+   "beforeSize": 214669,
+   "afterSize": 220828
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/th.txt",
+   "evidence": [
+    {
+     "file": "i18n/th.txt"
+    }
+   ],
+   "beforeSize": 180818,
+   "afterSize": 185704
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/tr.txt",
+   "evidence": [
+    {
+     "file": "i18n/tr.txt"
+    }
+   ],
+   "beforeSize": 86404,
+   "afterSize": 88494
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/uk.txt",
+   "evidence": [
+    {
+     "file": "i18n/uk.txt"
+    }
+   ],
+   "beforeSize": 143740,
+   "afterSize": 147501
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/uz.txt",
+   "evidence": [
+    {
+     "file": "i18n/uz.txt"
+    }
+   ],
+   "beforeSize": 88508,
+   "afterSize": 90738
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/vi.txt",
+   "evidence": [
+    {
+     "file": "i18n/vi.txt"
+    }
+   ],
+   "beforeSize": 103547,
+   "afterSize": 105920
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/zh-TW.txt",
+   "evidence": [
+    {
+     "file": "i18n/zh-TW.txt"
+    }
+   ],
+   "beforeSize": 69816,
+   "afterSize": 71923
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "i18n/zh.txt",
+   "evidence": [
+    {
+     "file": "i18n/zh.txt"
+    }
+   ],
+   "beforeSize": 70913,
+   "afterSize": 72832
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "index.html",
+   "evidence": [
+    {
+     "file": "index.html"
+    }
+   ],
+   "beforeSize": 1376,
+   "afterSize": 7415
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "lib/pele.min.js",
+   "evidence": [
+    {
+     "file": "lib/pele.min.js"
+    }
+   ],
+   "beforeSize": 699670,
+   "afterSize": 733670
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "lib/reveal/black.css",
+   "evidence": [
+    {
+     "file": "lib/reveal/black.css"
+    }
+   ],
+   "beforeSize": 6980,
+   "afterSize": 5010
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "lib/reveal/reveal.css",
+   "evidence": [
+    {
+     "file": "lib/reveal/reveal.css"
+    }
+   ],
+   "beforeSize": 46725,
+   "afterSize": 53963
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "lib/reveal/reveal.js",
+   "evidence": [
+    {
+     "file": "lib/reveal/reveal.js"
+    }
+   ],
+   "beforeSize": 89690,
+   "afterSize": 118912
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "lib/reveal/white.css",
+   "evidence": [
+    {
+     "file": "lib/reveal/white.css"
+    }
+   ],
+   "beforeSize": 6967,
+   "afterSize": 4996
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "main.js",
+   "evidence": [
+    {
+     "file": "main.js"
+    }
+   ],
+   "beforeSize": 212033,
+   "afterSize": 220175
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "package.json",
+   "evidence": [
+    {
+     "file": "package.json"
+    }
+   ],
+   "beforeSize": 260,
+   "afterSize": 260
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "quicklook.css",
+   "evidence": [
+    {
+     "file": "quicklook.css"
+    }
+   ],
+   "beforeSize": 105752,
+   "afterSize": 105786
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "quicklook.js",
+   "evidence": [
+    {
+     "file": "quicklook.js"
+    }
+   ],
+   "beforeSize": 675213,
+   "afterSize": 634942
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "sim.js",
+   "evidence": [
+    {
+     "file": "sim.js"
+    }
+   ],
+   "beforeSize": 17777,
+   "afterSize": 17868
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "starter.js",
+   "evidence": [
+    {
+     "file": "starter.js"
+    }
+   ],
+   "beforeSize": 438925,
+   "afterSize": 454909
+  },
+  {
+   "category": "files",
+   "change": "changed",
+   "value": "worker.js",
+   "evidence": [
+    {
+     "file": "worker.js"
+    }
+   ],
+   "beforeSize": 250472,
+   "afterSize": 197865
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "dialogue.msgFailedToMoveToSystemTrash",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "dialogue.msgFailedToMoveToSystemTrash = \"Failed to move {{item}} to the system trash. To delete anyway, change the “Deleted files” setting.\""
+    }
+   ],
+   "score": 15,
+   "text": "Failed to move {{item}} to the system trash. To delete anyway, change the “Deleted files” setting.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelEnabledPluginCount",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelEnabledPluginCount = \"{{count}} enabled\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "{{count}} enabled",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelFiles",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelFiles = \"Files\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Files",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelLastOpened",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelLastOpened = \"Last opened\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Last opened",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelOpenIncomplete",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelOpenIncomplete = \"This vault didn't finish opening last time.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "This vault didn't finish opening last time.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelOpenIncompleteTryRestricted",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelOpenIncompleteTryRestricted = \"This vault didn't finish opening last time. If it keeps happening, try restricted mode.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "This vault didn't finish opening last time. If it keeps happening, try restricted mode.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelPluginsDisabled",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelPluginsDisabled = \"Disabled\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Disabled",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelSlowCommunityPlugins",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelSlowCommunityPlugins = \"Community plugins took {{seconds}} seconds to load last time. If this vault is slow to open, try restricted mode.\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Community plugins took {{seconds}} seconds to load last time. If this vault is slow to open, try restricted mode.",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelStoredInICloud",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelStoredInICloud = \"iCloud\""
+    }
+   ],
+   "score": 55,
+   "why": [
+    "keywords: cloud",
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "iCloud",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.labelStoredOnDevice",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelStoredOnDevice = \"On this device\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "On this device",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.menuOptDeleteVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.menuOptDeleteVault = \"Delete vault...\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Delete vault...",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.menuOptForgetVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.menuOptForgetVault = \"Forget vault...\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Forget vault...",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.menuOptMoveToDeviceStorage",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.menuOptMoveToDeviceStorage = \"Move to device storage...\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Move to device storage...",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startScreen.mobile.menuOptRenameVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.menuOptRenameVault = \"Rename vault...\""
+    }
+   ],
+   "score": 40,
+   "why": [
+    "string ships but no first-party code references it yet (possible unreleased UI)"
+   ],
+   "text": "Rename vault...",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "interface.startUp.msgUnreadablePath",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startUp.msgUnreadablePath = \"Unable to read “{{path}}”, so its files aren’t shown. Check its permissions, then restart Obsidian.\""
+    }
+   ],
+   "score": 15,
+   "text": "Unable to read “{{path}}”, so its files aren’t shown. Check its permissions, then restart Obsidian.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "main.buttonManageVaults",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "main.buttonManageVaults = \"Manage vaults\""
+    }
+   ],
+   "score": 15,
+   "text": "Manage vaults",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "main.unknownFileMessage",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "main.unknownFileMessage = \"This file will open outside of Obsidian. Some file types can run code on your computer. Only proceed if you trust the source of this file.\""
+    }
+   ],
+   "score": 15,
+   "text": "This file will open outside of Obsidian. Some file types can run code on your computer. Only proceed if you trust the source of this file.",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "main.unknownFileTitle",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "main.unknownFileTitle = \"Open file in another app?\""
+    }
+   ],
+   "score": 15,
+   "text": "Open file in another app?",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "main.vaultInInstallFolderDetail",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "main.vaultInInstallFolderDetail = \"The installer erases this folder when Obsidian updates, and this vault with it. Choose \"Manage vaults\" to close the vault, then use \"Move va\""
+    }
+   ],
+   "score": 15,
+   "text": "The installer erases this folder when Obsidian updates, and this vault with it. Choose \"Manage vaults\" to close the vault, then use \"Move vault...\" on it to move it somewhere else.\n\n{{path}}",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "main.vaultInInstallFolderMessage",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "main.vaultInInstallFolderMessage = \"Vaults can't be stored in Obsidian's installation folder because it's erased when Obsidian updates\""
+    }
+   ],
+   "score": 15,
+   "text": "Vaults can't be stored in Obsidian's installation folder because it's erased when Obsidian updates",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "main.vaultInInstallFolderTitle",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "main.vaultInInstallFolderTitle = \"This vault is inside Obsidian's installation folder\""
+    }
+   ],
+   "score": 15,
+   "text": "This vault is inside Obsidian's installation folder",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "nouns.itemWithCount",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "nouns.itemWithCount = \"{{count}} item\""
+    }
+   ],
+   "score": 15,
+   "text": "{{count}} item",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "nouns.itemWithCount_plural",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "nouns.itemWithCount_plural = \"{{count}} items\""
+    }
+   ],
+   "score": 15,
+   "text": "{{count}} items",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "nouns.quotes",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "nouns.quotes = \"“{{item}}”\""
+    }
+   ],
+   "score": 15,
+   "text": "“{{item}}”",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "added",
+   "value": "plugins.search.labelSortRelevance",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "plugins.search.labelSortRelevance = \"Relevance\""
+    }
+   ],
+   "score": 15,
+   "text": "Relevance",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "editor.linkSuggestion.labelTypeBlock",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "editor.linkSuggestion.labelTypeBlock = \"^\""
+    }
+   ],
+   "score": 11,
+   "text": "^",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "editor.linkSuggestion.labelTypeHash",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "editor.linkSuggestion.labelTypeHash = \"#\""
+    }
+   ],
+   "score": 11,
+   "text": "#",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "editor.linkSuggestion.labelTypePipe",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "editor.linkSuggestion.labelTypePipe = \"|\""
+    }
+   ],
+   "score": 11,
+   "text": "|",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "interface.startScreen.mobile.buttonDeleteVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonDeleteVault = \"Delete vault\""
+    }
+   ],
+   "score": 11,
+   "text": "Delete vault",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "interface.startScreen.mobile.buttonForgetVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonForgetVault = \"Forget vault\""
+    }
+   ],
+   "score": 11,
+   "text": "Forget vault",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "interface.startScreen.mobile.buttonMoveToDeviceStorage",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonMoveToDeviceStorage = \"Move to device storage\""
+    }
+   ],
+   "score": 11,
+   "text": "Move to device storage",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "interface.startScreen.mobile.buttonRenameVault",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonRenameVault = \"Rename vault\""
+    }
+   ],
+   "score": 11,
+   "text": "Rename vault",
+   "referenced": false
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "setting.appearance.optionSlidingSidebar",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "setting.appearance.optionSlidingSidebar = \"Sliding sidebars\""
+    }
+   ],
+   "score": 11,
+   "text": "Sliding sidebars",
+   "referenced": true
+  },
+  {
+   "category": "i18n",
+   "change": "removed",
+   "value": "setting.appearance.optionSlidingSidebarDesc",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "setting.appearance.optionSlidingSidebarDesc = \"Sidebars slide to the side of the content instead of floating above.\""
+    }
+   ],
+   "score": 11,
+   "text": "Sidebars slide to the side of the content instead of floating above.",
+   "referenced": true
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "open-with-default-app",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 6018,
+     "snippet": "}), r.ipcMain.on(\"open-with-default-app\", (i, s) => {"
+    }
+   ],
+   "score": 45
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "popup-token",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5850,
+     "snippet": "}), r.ipcMain.on(\"popup-token\", i => {"
+    },
+    {
+     "file": "app.js",
+     "line": 100709,
+     "snippet": "return LN || (LN = electron.ipcRenderer.sendSync(\"popup-token\")), window.open(\"about:blank\", \"_blank\", [\"token=\" + LN, ...o].join(\",\"))"
+    }
+   ],
+   "score": 60,
+   "why": [
+    "keywords: token"
+   ]
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "startup",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5881,
+     "snippet": "}), r.ipcMain.on(\"startup\", i => {"
+    }
+   ],
+   "score": 45
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "startup-appearance",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5509,
+     "snippet": "return r.ipcMain.on(\"startup-appearance\", Y), y.on(\"closed\", () => r.ipcMain.off(\"startup-appearance\", Y)), P.on(\"did-create-window\", _ => {"
+    },
+    {
+     "file": "app.js",
+     "line": 142026,
+     "snippet": "window.electron.ipcRenderer.send(\"startup-appearance\", {"
+    }
+   ],
+   "score": 45
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "startup-snapshot",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5890,
+     "snippet": "r.ipcMain.handle(\"startup-snapshot\", async (i, s, d) => {"
+    }
+   ],
+   "score": 45
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "startup-snapshot-save",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5898,
+     "snippet": "}), r.ipcMain.on(\"startup-snapshot-save\", (i, s, d) => {"
+    },
+    {
+     "file": "app.js",
+     "line": 142098,
+     "snippet": "delete n.active, window.electron.ipcRenderer.send(\"startup-snapshot-save\", {"
+    }
+   ],
+   "score": 45
+  },
+  {
+   "category": "urls",
+   "change": "removed",
+   "value": "https://git.io/vg5Ft",
+   "evidence": [
+    {
+     "file": "worker.js",
+     "line": 2644,
+     "snippet": "…ail(new Error(\"Incorrectly eaten value: please report this warning on https://git.io/vg5Ft\"), k())"
+    },
+    {
+     "file": "quicklook.js",
+     "line": 2644,
+     "snippet": "…ail(new Error(\"Incorrectly eaten value: please report this warning on https://git.io/vg5Ft\"), b())"
+    },
+    {
+     "file": "app.js",
+     "line": 2650,
+     "snippet": "…ail(new Error(\"Incorrectly eaten value: please report this warning on https://git.io/vg5Ft\"), w())"
+    }
+   ],
+   "score": 14
+  }
+ ],
+ "notable": [
+  {
+   "category": "i18n-cluster",
+   "change": "added",
+   "value": "interface.startScreen.mobile",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.labelStoredInICloud = \"iCloud\""
+    }
+   ],
+   "title": "New UI string group interface.startScreen.mobile (13 strings)",
+   "score": 98,
+   "why": [
+    "13 new UI strings under one prefix",
+    "13 not referenced by code yet",
+    "keywords: cloud"
+   ],
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.15.0→1.15.1 (searched for: \"enabled\", \"Last opened\", \"This vault didn't finish opening last time\", \"On this device\")",
+   "strings": [
+    {
+     "key": "interface.startScreen.mobile.labelStoredInICloud",
+     "text": "iCloud",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelEnabledPluginCount",
+     "text": "{{count}} enabled",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelFiles",
+     "text": "Files",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelLastOpened",
+     "text": "Last opened",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelOpenIncomplete",
+     "text": "This vault didn't finish opening last time.",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelOpenIncompleteTryRestricted",
+     "text": "This vault didn't finish opening last time. If it keeps happening, try restricted mode.",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelPluginsDisabled",
+     "text": "Disabled",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelSlowCommunityPlugins",
+     "text": "Community plugins took {{seconds}} seconds to load last time. If this vault is slow to open, try restricted mode.",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.labelStoredOnDevice",
+     "text": "On this device",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.menuOptDeleteVault",
+     "text": "Delete vault...",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.menuOptForgetVault",
+     "text": "Forget vault...",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.menuOptMoveToDeviceStorage",
+     "text": "Move to device storage...",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.menuOptRenameVault",
+     "text": "Rename vault...",
+     "referenced": false
+    }
+   ]
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "popup-token",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5850,
+     "snippet": "}), r.ipcMain.on(\"popup-token\", i => {"
+    },
+    {
+     "file": "app.js",
+     "line": 100709,
+     "snippet": "return LN || (LN = electron.ipcRenderer.sendSync(\"popup-token\")), window.open(\"about:blank\", \"_blank\", [\"token=\" + LN, ...o].join(\",\"))"
+    }
+   ],
+   "title": "New IPC channel popup-token (renderer, sendSync)",
+   "score": 60,
+   "why": [
+    "keywords: token"
+   ],
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.15.0→1.15.1 (searched for: \"popup token\")"
+  },
+  {
+   "category": "i18n-cluster",
+   "change": "added",
+   "value": "main",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "main.buttonManageVaults = \"Manage vaults\""
+    }
+   ],
+   "title": "New UI string group main (6 strings)",
+   "score": 49,
+   "why": [
+    "6 new UI strings under one prefix"
+   ],
+   "officialStatus": "mentioned",
+   "official": "mentioned (matched \"main\" in the 1.15.1 (public) notes)",
+   "strings": [
+    {
+     "key": "main.buttonManageVaults",
+     "text": "Manage vaults",
+     "referenced": true
+    },
+    {
+     "key": "main.unknownFileMessage",
+     "text": "This file will open outside of Obsidian. Some file types can run code on your computer. Only proceed if you trust the source of this file.",
+     "referenced": true
+    },
+    {
+     "key": "main.unknownFileTitle",
+     "text": "Open file in another app?",
+     "referenced": true
+    },
+    {
+     "key": "main.vaultInInstallFolderDetail",
+     "text": "The installer erases this folder when Obsidian updates, and this vault with it. Choose \"Manage vaults\" to close the vault, then use \"Move vault...\" on it to move it somewhere else.\n\n{{path}}",
+     "referenced": true
+    },
+    {
+     "key": "main.vaultInInstallFolderMessage",
+     "text": "Vaults can't be stored in Obsidian's installation folder because it's erased when Obsidian updates",
+     "referenced": true
+    },
+    {
+     "key": "main.vaultInInstallFolderTitle",
+     "text": "This vault is inside Obsidian's installation folder",
+     "referenced": true
+    }
+   ]
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "open-with-default-app",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 6018,
+     "snippet": "}), r.ipcMain.on(\"open-with-default-app\", (i, s) => {"
+    }
+   ],
+   "title": "New IPC channel open-with-default-app (main, on)",
+   "score": 45,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.15.0→1.15.1 (searched for: \"open with default app\")"
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "startup",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5881,
+     "snippet": "}), r.ipcMain.on(\"startup\", i => {"
+    }
+   ],
+   "title": "New IPC channel startup (main, on)",
+   "score": 45,
+   "officialStatus": "mentioned",
+   "official": "mentioned (matched \"startup\" in the 1.15.1 (public) notes)"
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "startup-appearance",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5509,
+     "snippet": "return r.ipcMain.on(\"startup-appearance\", Y), y.on(\"closed\", () => r.ipcMain.off(\"startup-appearance\", Y)), P.on(\"did-create-window\", _ => {"
+    },
+    {
+     "file": "app.js",
+     "line": 142026,
+     "snippet": "window.electron.ipcRenderer.send(\"startup-appearance\", {"
+    }
+   ],
+   "title": "New IPC channel startup-appearance (renderer, send)",
+   "score": 45,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.15.0→1.15.1 (searched for: \"startup appearance\")"
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "startup-snapshot",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5890,
+     "snippet": "r.ipcMain.handle(\"startup-snapshot\", async (i, s, d) => {"
+    }
+   ],
+   "title": "New IPC channel startup-snapshot (main, handle)",
+   "score": 45,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.15.0→1.15.1 (searched for: \"startup snapshot\")"
+  },
+  {
+   "category": "ipc",
+   "change": "added",
+   "value": "startup-snapshot-save",
+   "evidence": [
+    {
+     "file": "main.js",
+     "line": 5898,
+     "snippet": "}), r.ipcMain.on(\"startup-snapshot-save\", (i, s, d) => {"
+    },
+    {
+     "file": "app.js",
+     "line": 142098,
+     "snippet": "delete n.active, window.electron.ipcRenderer.send(\"startup-snapshot-save\", {"
+    }
+   ],
+   "title": "New IPC channel startup-snapshot-save (renderer, send)",
+   "score": 45,
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.15.0→1.15.1 (searched for: \"startup snapshot save\")"
+  },
+  {
+   "category": "i18n-cluster",
+   "change": "removed",
+   "value": "interface.startScreen.mobile",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "interface.startScreen.mobile.buttonDeleteVault = \"Delete vault\""
+    }
+   ],
+   "title": "Removed UI string group interface.startScreen.mobile (4 strings)",
+   "score": 45,
+   "why": [
+    "4 UI strings under one prefix were removed"
+   ],
+   "officialStatus": "absent",
+   "official": "not found in the notes for 1.15.0→1.15.1 (searched for: \"Delete vault\", \"Forget vault\", \"Move to device storage\", \"Rename vault\")",
+   "strings": [
+    {
+     "key": "interface.startScreen.mobile.buttonDeleteVault",
+     "text": "Delete vault",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonForgetVault",
+     "text": "Forget vault",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonMoveToDeviceStorage",
+     "text": "Move to device storage",
+     "referenced": false
+    },
+    {
+     "key": "interface.startScreen.mobile.buttonRenameVault",
+     "text": "Rename vault",
+     "referenced": false
+    }
+   ]
+  },
+  {
+   "category": "i18n-cluster",
+   "change": "added",
+   "value": "nouns",
+   "evidence": [
+    {
+     "file": "i18n.js",
+     "snippet": "nouns.itemWithCount = \"{{count}} item\""
+    }
+   ],
+   "title": "New UI string group nouns (3 strings)",
+   "score": 37,
+   "why": [
+    "3 new UI strings under one prefix"
+   ],
+   "officialStatus": "mentioned",
+   "official": "mentioned (matched \"item\" in the 1.15.1 (public) notes)",
+   "strings": [
+    {
+     "key": "nouns.itemWithCount",
+     "text": "{{count}} item",
+     "referenced": true
+    },
+    {
+     "key": "nouns.itemWithCount_plural",
+     "text": "{{count}} items",
+     "referenced": true
+    },
+    {
+     "key": "nouns.quotes",
+     "text": "“{{item}}”",
+     "referenced": true
+    }
+   ]
+  }
+ ],
+ "reportFile": "obsidian-1.15.0-to-1.15.1.md",
+ "notes": [
+  {
+   "version": "1.15.1",
+   "url": "https://obsidian.md/changelog/2026-11-12-desktop-v1.15.1/"
+  },
+  {
+   "version": "1.15.1",
+   "url": "https://obsidian.md/changelog/2026-11-03-desktop-v1.15.1/"
+  },
+  {
+   "version": "1.15.0",
+   "url": "https://obsidian.md/changelog/2026-11-02-desktop-v1.15.0/"
+  },
+  {
+   "version": "1.15.0",
+   "url": "https://obsidian.md/changelog/2026-10-22-desktop-v1.15.0/"
+  },
+  {
+   "version": "1.14.5",
+   "url": "https://obsidian.md/changelog/2026-10-22-desktop-v1.14.5/"
+  },
+  {
+   "version": "1.14.4",
+   "url": "https://obsidian.md/changelog/2026-10-05-desktop-v1.14.4/"
+  },
+  {
+   "version": "1.14.4",
+   "url": "https://obsidian.md/changelog/2026-10-01-desktop-v1.14.4/"
+  },
+  {
+   "version": "1.14.3",
+   "url": "https://obsidian.md/changelog/2026-09-29-desktop-v1.14.3/"
+  },
+  {
+   "version": "1.14.2",
+   "url": "https://obsidian.md/changelog/2026-09-15-desktop-v1.14.2/"
+  },
+  {
+   "version": "1.14.1",
+   "url": "https://obsidian.md/changelog/2026-09-08-desktop-v1.14.1/"
+  }
+ ]
+}

@@ -3,6 +3,22 @@
 <title>Shadow Log</title><link>https://github.com/Non-Zero-AI/shadow-log/blob/main/reports</link>
 <description>What app updates really changed: hidden features, flags, endpoints, telemetry. With evidence.</description>
 <item>
+<title>Obsidian 1.15.0 → 1.15.1: New UI string group interface.startScreen.mobile (13 strings); New IPC channel popup-token (renderer, sendSync); New UI string group main (6 strings)</title>
+<link>https://github.com/Non-Zero-AI/shadow-log/blob/main/reports/obsidian-1.15.0-to-1.15.1.md</link>
+<guid isPermaLink="false">obsidian-1.15.0-1.15.1</guid>
+<pubDate>Thu, 12 Nov 2026 23:35:30 GMT</pubDate>
+<description>• New UI string group interface.startScreen.mobile (13 strings)
+• New IPC channel popup-token (renderer, sendSync)
+• New UI string group main (6 strings)
+• New IPC channel open-with-default-app (main, on)
+• New IPC channel startup (main, on)
+• New IPC channel startup-appearance (renderer, send)
+• New IPC channel startup-snapshot (main, handle)
+• New IPC channel startup-snapshot-save (renderer, send)
+• Removed UI string group interface.startScreen.mobile (4 strings)
+• New UI string group nouns (3 strings)</description>
+</item>
+<item>
 <title>Obsidian 1.14.5 → 1.15.0: New UI string group interface.startScreen.mobile (24 strings); Removed telemetry/analytics signal host:www.google-analytics.com; Removed telemetry/analytics signal event:config</title>
 <link>https://github.com/Non-Zero-AI/shadow-log/blob/main/reports/obsidian-1.14.5-to-1.15.0.md</link>
 <guid isPermaLink="false">obsidian-1.14.5-1.15.0</guid>
